@@ -9,7 +9,7 @@ pip install git+http://github.com/wtaylor17/keras-vpnn
 The remaining dependencies (of the python package) are:
 1. `wget`
 2. `tensorflow` 1.x, tested with `1.15.2`
-3. `keras` version 2.3.1
+3. `keras` version `2.3.1`
 4. `numpy`
 
 ## Installation
