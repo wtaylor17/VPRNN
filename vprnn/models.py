@@ -28,7 +28,7 @@ def get_models_from_rnn_cells(model: Model):
         return models
 
 
-def save_rvpnn(model: Model, path: str):
+def save_vprnn(model: Model, path: str):
     with CustomObjectScope(custom_objects()):
         nested_models = get_models_from_rnn_cells(model)
         for i, rnn_model_list in enumerate(nested_models):
@@ -40,7 +40,7 @@ def save_rvpnn(model: Model, path: str):
     return len(nested_models)
 
 
-def load_rvpnn(path: str, do_compile=True, **kwargs):
+def load_vprnn(path: str, do_compile=True, **kwargs):
     assert os.path.isdir(path), "Needs to be a valid directory"
     c_o = custom_objects()
     with CustomObjectScope(c_o):

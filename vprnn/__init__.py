@@ -8,6 +8,7 @@ def custom_objects():
 
 
 from . import mnist_data, base_layer, layers, models, utils, imdb_data
+from .models import save_vprnn, load_vprnn
 from vpnn import custom_objects as base_custom_object_fn
 
 
