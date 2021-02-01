@@ -1,0 +1,16 @@
+{
+    "K": 7,
+    "T": 500,
+    "H": 128,
+    "batch_size": 64,
+    "epochs": 200,
+    "steps_per_epoch": 100,
+    "recurrent_activation": "relu",
+    "output_activation": "linear",
+    "initial_lr": 0.002,
+    "decay": 1e-07,
+    "optimizer": "RMSprop",
+    "tensorboard": true,
+    "recurrent_clip": -1,
+    "model_type": "vanilla"
+}
