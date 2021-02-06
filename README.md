@@ -22,3 +22,7 @@ from the root directory of this repository, or alternatively
 pip install git+http://github.com/wtaylor17/VPRNN
 ```
 from anywhere with an internet connection.
+
+## Experiments
+
+1. Addition problem `T=500,1000,5000,10000`
