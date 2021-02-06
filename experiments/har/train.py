@@ -10,7 +10,7 @@ from vprnn.models import save_vprnn
 
 from math import ceil, log2
 
-from rvpnn.har_data import load_har_stash
+from vprnn.har_data import load_har_stash
 
 
 parser = argparse.ArgumentParser()
