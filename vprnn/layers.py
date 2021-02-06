@@ -12,7 +12,7 @@ class VanillaCell(base_layer.BaseRNNCell):
         super(VanillaCell, self).__init__(units, **kwargs)
         if units % 2 != 0:
             raise ValueError('Need even no. of units')
-        self.n_rotations = n_rotations or 2*ceil(log2(units))
+        self.n_rotations = n_rotations or ceil(log2(units))
         self.recurrent_layer = None
         self.use_diag = use_diag
         self.use_kernel = True
