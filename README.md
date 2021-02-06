@@ -12,6 +12,8 @@ The remaining dependencies (of the python package) are:
 3. `keras` version `2.3.1`
 4. `numpy`
 
+Additionally for some scripts, you may need `matplotlib`, `seaborn`, `tqdm`, or some other utilities.
+
 ## Installation
 Run
 ```bash
