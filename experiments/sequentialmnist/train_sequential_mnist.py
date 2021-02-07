@@ -92,7 +92,7 @@ y_test = to_categorical(y_test, 10)
 if testing:
     x_val, y_val = x_test, y_test
 else:
-    num_train = 48000
+    num_train = 55000
     x_val, y_val = x_train[num_train:], y_train[num_train:]
     x_train, y_train = x_train[:num_train], y_train[:num_train]
 
