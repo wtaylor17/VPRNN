@@ -6,8 +6,8 @@ except ImportError:
     from tensorflow import set_random_seed as set_seed
 set_seed(21)
 
-from rvpnn.models import load_rvpnn
-from rvpnn.mnist_data import load_mnist_stash
+from vprnn.models import load_vprnn
+from vprnn.mnist_data import load_mnist_stash
 
 from keras.utils import to_categorical
 
@@ -31,7 +31,7 @@ y_test = to_categorical(y_test, 10)
 
 model_name = sys.argv[1]
 
-model = load_rvpnn(model_name, do_compile=False)
+model = load_vprnn(model_name, do_compile=False)
 model.compile(optimizer='sgd', loss='categorical_crossentropy')
 model.summary()
 pred = model.predict(x_test)
