@@ -38,12 +38,12 @@ class VanillaCell(base_layer.BaseRNNCell):
                                     regularizer=self.bias_regularizer)
         if self.recurrent_layer is None:
             recurrent_layer = VPNNLayer(self.units,
-                                             n_rotations=self.n_rotations,
-                                             activation='linear',
-                                             use_bias=False,
-                                             name='vpnn',
-                                             use_diag=self.use_diag,
-                                             diag_func=None)  # TODO make diag_func a constructor parameter
+                                        n_rotations=self.n_rotations,
+                                        activation='linear',
+                                        use_bias=False,
+                                        name='vpnn',
+                                        use_diag=self.use_diag,
+                                        diag_func=None)  # TODO make diag_func a constructor parameter
             self.add_models([recurrent_layer])
         super(VanillaCell, self).build(input_shape)
 
