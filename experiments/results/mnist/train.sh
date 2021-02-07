@@ -8,6 +8,6 @@
 module load cuda cudnn
 source $HOME/scratch/tf1env/bin/activate
 
-python $HOME/scratch/vpnn_repos/VPRNN/experiments/sequentialmnist/train_sequential_mnist.py --epochs 300 --stamp 1layer_mnist --dim 512\
+python $HOME/scratch/vpnn_repos/VPRNN/experiments/sequentialmnist/train_sequential_mnist.py --epochs 300 --stamp 1layer_smnist --dim 512\
      --activation relu --learning_rate 0.001 --tensorboard --n_layers 1 --rnn_type vanilla --batch_size 256 --optimizer rmsprop --nodiag --noclip\
-     --input_dropout 0.1 --verbose 2 --patience 30 --test_mode
+     --input_dropout 0.1 --verbose 2 --test_mode

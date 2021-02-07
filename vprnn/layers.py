@@ -37,14 +37,14 @@ class VanillaCell(base_layer.BaseRNNCell):
                                     constraint=self.bias_constraint,
                                     regularizer=self.bias_regularizer)
         if self.recurrent_layer is None:
-            self.recurrent_layer = VPNNLayer(self.units,
-                                             n_rotations=self.n_rotations,
-                                             activation='linear',
-                                             use_bias=False,
-                                             name='vpnn',
-                                             use_diag=self.use_diag,
-                                             diag_func=None)  # TODO make diag_func a constructor parameter
-            self.add_models([self.recurrent_layer])
+            recurrent_layer = VPNNLayer(self.units,
+                                        n_rotations=self.n_rotations,
+                                        activation='linear',
+                                        use_bias=False,
+                                        name='vpnn',
+                                        use_diag=self.use_diag,
+                                        diag_func=None)  # TODO make diag_func a constructor parameter
+            self.add_models([recurrent_layer])
         super(VanillaCell, self).build(input_shape)
 
     def call(self, inputs, states, **kwargs):
@@ -60,6 +60,11 @@ class VanillaCell(base_layer.BaseRNNCell):
 
     def add_models(self, models: List[Model]):
         assert len(models) <= 1, "Zero or one model needs to be given"
+        if self.recurrent_layer is not None:
+            # stops weights from being double counted on a reload
+            # (still shows up as non-trainable params)
+            self.recurrent_layer.trainable = False
+            del self.recurrent_layer
         if len(models) == 1:
             model = models[0]
             found_outp_size = K.int_shape(model.outputs[0])[-1]

@@ -1,0 +1,22 @@
+{
+    "K": 9,
+    "T": 784,
+    "H": 512,
+    "epochs": 300,
+    "recurrent_activation": "relu",
+    "initial_lr": 0.0001,
+    "optimizer": "RMSprop",
+    "tensorboard": true,
+    "recurrent_clip": -1,
+    "ln": false,
+    "rnn_kwargs": {
+        "n_rotations": 9,
+        "activation": "relu",
+        "recurrent_clip": -1,
+        "use_diag": false
+    },
+    "test_evaluation": [
+        0.12985630284845828,
+        0.960099995136261
+    ]
+}
