@@ -57,6 +57,7 @@ If you get `AttributeError: 'str' object has no attribute 'decode'` when loading
 The pretrained model can't be easily loaded by default. Assuming embeddings are stashed, add the code
 ```python
 from vprnn.imdb_data import create_embeddings_matrix
+
 class IMDBInit(keras.initializers.Initializer):
     def __init__(self, **kwargs):
         self.mat, *_ = create_embeddings_matrix()
@@ -64,5 +65,7 @@ class IMDBInit(keras.initializers.Initializer):
     
     def __call__(self, *args, **kwargs):
         return self.mat
+
+setattr(keras.initializers, '<lambda>', IMDBInit)
 ```
 before you call `load_vprnn`. An evaluation script may be added soon.
