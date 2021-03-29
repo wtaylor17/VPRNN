@@ -50,4 +50,19 @@ Single layer accuracies and parameters (IMDB excludes embeddings):
 
 ## Known Issues
 
+### Attribute Error when Loading
 If you get `AttributeError: 'str' object has no attribute 'decode'` when loading a VPRNN, try `pip install h5py==2.10.0 --force-reinstall`.
+
+### Loading IMDB Models
+The pretrained model can't be easily loaded by default. Assuming embeddings are stashed, add the code
+```python
+from vprnn.imdb_data import create_embeddings_matrix
+class IMDBInit(keras.initializers.Initializer):
+    def __init__(self, **kwargs):
+        self.mat, *_ = create_embeddings_matrix()
+        self.mat = K.constant(self.mat)
+    
+    def __call__(self, *args, **kwargs):
+        return self.mat
+```
+before you call `load_vprnn`. An evaluation script may be added soon.
