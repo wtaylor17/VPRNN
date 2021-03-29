@@ -47,3 +47,7 @@ Single layer accuracies and parameters (IMDB excludes embeddings):
 | pMNIST | 96.01 | 11k |
 | IMDB | 87.74 | 56k |
 | HAR-2 | 94.94 | 5k |
+
+## Known Issues
+
+If you get `AttributeError: 'str' object has no attribute 'decode'` when loading a VPRNN, try `pip install h5py==2.10.0 --force-reinstall`.
