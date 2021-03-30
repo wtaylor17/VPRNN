@@ -72,3 +72,4 @@ before you call `load_vprnn`. An evaluation script may be added soon. For now, s
 
 ### Strange Issue with HAR-2 on Linux
 For some reason HAR-2 won't train or predict correctly on Linux (from what I can tell). I have trained and tested the model on two separate Windows machines and got the same (reported) results, while accuracy drops even for pretrained models on Linux. This is still under investigation.
+**EDIT**: This problem has been found to be due to the HAR-2 data not downloading/converting properly on Linux or Colab. If the data is downloaded through Windows it can then be used anywhere after file transfer. A Colab notebook will be added soon to illustrate the use of a pre-downloaded data set, and the investigation into this data issue is ongoing.
