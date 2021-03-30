@@ -69,3 +69,6 @@ class IMDBInit(keras.initializers.Initializer):
 setattr(keras.initializers, '<lambda>', IMDBInit)
 ```
 before you call `load_vprnn`. An evaluation script may be added soon. For now, see [this Colab notebook](https://colab.research.google.com/drive/1gWfXBGbsC8pHsRg0yntDVhdZUNxXVThQ?usp=sharing).
+
+### Strange Issue with HAR-2 on Linux
+For some reason HAR-2 won't train or predict correctly on Linux (from what I can tell). I have trained and tested the model on two separate Windows machines and got the same (reported) results, while accuracy drops even for pretrained models on Linux. This is still under investigation.
