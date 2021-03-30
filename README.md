@@ -68,4 +68,4 @@ class IMDBInit(keras.initializers.Initializer):
 
 setattr(keras.initializers, '<lambda>', IMDBInit)
 ```
-before you call `load_vprnn`. An evaluation script may be added soon.
+before you call `load_vprnn`. An evaluation script may be added soon. For now, see [this Colab notebook](https://colab.research.google.com/drive/1gWfXBGbsC8pHsRg0yntDVhdZUNxXVThQ?usp=sharing).
